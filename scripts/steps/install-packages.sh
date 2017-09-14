@@ -46,3 +46,13 @@ yum -y install bash-completion
 #  ssh $node "yum -y update " ; \
 #done
 
+# TODO run docker install
+#for node in master1.example.com \
+#	infranode1.example.com \
+#	node1.example.com \
+#	node2.example.com; \
+#do \
+#  echo Installing docker on $node ; \
+#  ssh $node "yum -y install docker" ;
+#done
+
