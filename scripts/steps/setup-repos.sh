@@ -48,13 +48,13 @@ EOF
 yum clean all ; yum repolist
 
 
-# TODO loop through all nodes
-#for node in "${all_nodes[@]}"
-#do
-#          echo Copying open repos to $node
-#          scp /etc/yum.repos.d/open.repo ${node}:/etc/yum.repos.d/open.repo
-#          ssh ${node} 'mv /etc/yum.repos.d/redhat.{repo,disabled}'
-#          ssh ${node} yum clean all
-#          ssh ${node} yum repolist
-#done
+# loop through all nodes
+for node in "${all_nodes[@]}"
+do
+          echo Copying open repos to $node
+          scp /etc/yum.repos.d/open.repo ${node}:/etc/yum.repos.d/open.repo
+          ssh ${node} 'mv /etc/yum.repos.d/redhat.{repo,disabled}'
+          ssh ${node} yum clean all
+          ssh ${node} yum repolist
+done
 
