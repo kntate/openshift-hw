@@ -19,7 +19,7 @@ deployment_type=openshift-enterprise
 openshift_release=v$OSE_VERSION
 
 openshift_master_cluster_method=native
-openshift_master_cluster_hostname=master1.example.com
+openshift_master_cluster_hostname=192.168.206.130
 openshift_master_cluster_public_hostname=master1-${GUID}.oslab.opentlc.com
 
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
@@ -42,20 +42,20 @@ openshift_master_default_subdomain=cloudapps-${GUID}.oslab.opentlc.com
 
 openshift_hosted_registry_storage_kind=nfs
 openshift_hosted_registry_storage_access_modes=['ReadWriteMany']
-openshift_hosted_registry_storage_host=bastion.example.com
+openshift_hosted_registry_storage_host=192.168.206.131
 openshift_hosted_registry_storage_nfs_directory=/exports
 openshift_hosted_registry_storage_volume_name=registry
 openshift_hosted_registry_storage_volume_size=5Gi
 
 [nfs]
-bastion.example.com
+192.168.206.131
 
 [masters]
-master1.example.com openshift_hostname=master1.example.com openshift_public_hostname=master1-${GUID}.oslab.opentlc.com
+192.168.206.130 openshift_hostname=192.168.206.130 openshift_public_hostname=master1-${GUID}.oslab.opentlc.com
 
 [nodes]
-master1.example.com openshift_hostname=master1.example.com openshift_public_hostname=master1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'infra'}"
-infranode1.example.com openshift_hostname=infranode1.example.com openshift_public_hostname=infranode1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'infra', 'zone': 'infranodes'}"
-node1.example.com openshift_hostname=node1.example.com openshift_public_hostname=node1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
-node2.example.com openshift_hostname=node2.example.com openshift_public_hostname=node2-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'west'}"
+192.168.206.130 openshift_hostname=192.168.206.130 openshift_public_hostname=master1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'infra'}"
+192.168.206.128 openshift_hostname=192.168.206.128 openshift_public_hostname=infranode1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'infra', 'zone': 'infranodes'}"
+192.168.206.132 openshift_hostname=192.168.206.132 openshift_public_hostname=node1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+192.168.206.129 openshift_hostname=192.168.206.129 openshift_public_hostname=node2-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'west'}"
 EOF
