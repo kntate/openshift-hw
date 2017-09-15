@@ -59,3 +59,8 @@ openshift_hosted_registry_storage_volume_size=5Gi
 192.168.206.132 openshift_hostname=192.168.206.132 openshift_public_hostname=node1-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
 192.168.206.129 openshift_hostname=192.168.206.129 openshift_public_hostname=node2-${GUID}.oslab.opentlc.com openshift_node_labels="{'region': 'primary', 'zone': 'west'}"
 EOF
+
+
+# run the playbook
+ansible-playbook -f 20 /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml
+
