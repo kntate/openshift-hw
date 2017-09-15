@@ -20,32 +20,23 @@ cat << EOF > /etc/ansible/hosts
 EOF
 
 
-#TODO replace loop with actual nodes
-#for node in "${all_nodes[@]}"
-#do \
-#  echo installing NetworkManager on $node ; \
-#  ssh $node "yum -y install NetworkManager"
-#done
+for node in "${all_nodes[@]}"
+do \
+  echo installing NetworkManager on $node ; \
+  ssh $node "yum -y install NetworkManager"
+done
 
 
 yum -y install wget git net-tools bind-utils iptables-services bridge-utils
 yum -y install bash-completion
 
-# TODO replace with master
-#ssh master1.example.com yum -y install bash-completion
-
 
 # TODO run yum update on all nodes
-#for node in "${all_nodes[@]}"
-#do \
-#  echo Running yum update on $node ; \
-#  ssh $node "yum -y update " ; \
-#done
+for node in "${all_nodes[@]}"
+do \
+  echo Running yum update on $node ; \
+  ssh $node "yum -y update " ; \
+done
 
-# TODO run docker install
-#for node in "${all_nodes[@]}"
-#do \
-#  echo Installing docker on $node ; \
-#  ssh $node "yum -y install docker" ;
-#done
+
 

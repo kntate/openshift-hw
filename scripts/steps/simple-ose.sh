@@ -3,6 +3,14 @@ source properties.sh
 export OSE_VERSION=3.5
 export GUID="ABCD"
 
+yum -y install atomic-openshift-utils
+yum -y install bash-completion
+for node in "${master_nodes[@]}"
+do 
+  ssh $node "yum -y install atomic-openshift-utils"
+  ssh $node "yum -y install bash-completion"
+done
+
 cat << EOF > /etc/ansible/hosts
 [OSEv3:children]
 masters

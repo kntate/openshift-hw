@@ -1,6 +1,12 @@
 source properties.sh
 
 yum -y install atomic-openshift-utils
+yum -y install bash-completion
+for node in "${master_nodes[@]}"
+do 
+  ssh $node "yum -y install atomic-openshift-utils"
+  ssh $node "yum -y install bash-completion"
+done
 
 
 # Create ansible file
