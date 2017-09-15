@@ -20,8 +20,7 @@ done
 
 # TODO determine the volume group
 cat <<EOF > /tmp/docker-storage-setup
-DEVS=/dev/vdb
-VG=docker-vg
+
 EOF
 
 # setup docker storage on all nodes
