@@ -1,3 +1,5 @@
+source properties.sh
+
 # Add repos
 export OWN_REPO_PATH=https://admin.shared.example.opentlc.com/repos/ocp/3.5
 cat << EOF > /etc/yum.repos.d/open.repo
@@ -47,10 +49,8 @@ yum clean all ; yum repolist
 
 
 # TODO loop through all nodes
-#for node in master1.example.com \
-#              infranode1.example.com \
-#              node1.example.com \
-#              node2.example.com; do
+#for node in "${all_nodes[@]}"
+#do
 #          echo Copying open repos to $node
 #          scp /etc/yum.repos.d/open.repo ${node}:/etc/yum.repos.d/open.repo
 #          ssh ${node} 'mv /etc/yum.repos.d/redhat.{repo,disabled}'

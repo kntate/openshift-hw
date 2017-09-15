@@ -11,3 +11,6 @@ echo StrictHostKeyChecking no >> /etc/ssh/ssh_config
 ./steps/dns.sh
 
 ./steps/docker.sh
+
+./steps/ose.sh
+

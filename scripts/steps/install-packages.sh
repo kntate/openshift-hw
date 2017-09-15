@@ -1,3 +1,5 @@
+source properties.sh
+
 # install ansible
 yum -y install ansible
 
@@ -19,10 +21,7 @@ EOF
 
 
 #TODO replace loop with actual nodes
-#for node in   master1.example.com \
-#	infranode1.example.com \
-#	node1.example.com \
-#	node2.example.com; \
+#for node in "${all_nodes[@]}"
 #do \
 #  echo installing NetworkManager on $node ; \
 #  ssh $node "yum -y install NetworkManager"
@@ -37,20 +36,14 @@ yum -y install bash-completion
 
 
 # TODO run yum update on all nodes
-#for node in master1.example.com \
-#	infranode1.example.com \
-#	node1.example.com \
-#	node2.example.com; \
+#for node in "${all_nodes[@]}"
 #do \
 #  echo Running yum update on $node ; \
 #  ssh $node "yum -y update " ; \
 #done
 
 # TODO run docker install
-#for node in master1.example.com \
-#	infranode1.example.com \
-#	node1.example.com \
-#	node2.example.com; \
+#for node in "${all_nodes[@]}"
 #do \
 #  echo Installing docker on $node ; \
 #  ssh $node "yum -y install docker" ;
