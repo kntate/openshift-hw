@@ -4,7 +4,7 @@ source properties.sh
 for node in "${all_nodes[@]}"
 do 
   echo Installing docker on $node 
-  echo ssh $node "yum -y install docker" 
+  ssh $node "yum -y install docker" 
 done
 
 
@@ -20,7 +20,8 @@ done
 
 # TODO determine the volume group
 cat <<EOF > /tmp/docker-storage-setup
-
+DEVS=/dev/vdb
+VG=docker-vg
 EOF
 
 # setup docker storage on all nodes
