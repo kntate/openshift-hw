@@ -11,7 +11,7 @@ yum -y install bind bind-utils
 #The following commands use the host command against the server ipa.opentlc.com to get the public IP address, and so should be run on the same line:
 #host infranode1-$GUID.oslab.opentlc.com ipa.opentlc.com |grep infranode | awk '{print $4}'
 #HostIP=`host infranode1-$GUID.oslab.opentlc.com  ipa.opentlc.com |grep infranode | awk '{print $4}'`
-HostIP=192.168.206.128
+HostIP=192.168.206.130
 domain="cloudapps-$GUID.oslab.opentlc.com"
 echo Resolved:
 echo $HostIP $domain
