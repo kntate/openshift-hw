@@ -9,14 +9,16 @@ yum -y install bind bind-utils
 #export guid=`hostname|cut -f2 -d-|cut -f1 -d.`
 
 #The following commands use the host command against the server ipa.opentlc.com to get the public IP address, and so should be run on the same line:
-host infranode1-$GUID.oslab.opentlc.com ipa.opentlc.com |grep infranode | awk '{print $4}'
-HostIP=`host infranode1-$GUID.oslab.opentlc.com  ipa.opentlc.com |grep infranode | awk '{print $4}'`
+#host infranode1-$GUID.oslab.opentlc.com ipa.opentlc.com |grep infranode | awk '{print $4}'
+#HostIP=`host infranode1-$GUID.oslab.opentlc.com  ipa.opentlc.com |grep infranode | awk '{print $4}'`
+HostIP=192.168.206.128
 domain="cloudapps-$GUID.oslab.opentlc.com"
+echo Resolved:
 echo $HostIP $domain
 
 #Create the zone file with the wildcard DNS:
 mkdir /var/named/zones
-cho "\$ORIGIN  .
+echo "\$ORIGIN  .
 \$TTL 1  ;  1 seconds (for testing only)
 ${domain} IN SOA master.${domain}.  root.${domain}.  (
   2011112904  ;  serial
