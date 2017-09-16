@@ -9,3 +9,6 @@ declare -a all_nodes=("${master_nodes[@]}" \
         "${infra_nodes[@]}" \
         "${app_nodes[@]}")
 
+export GUID="ABCD"
+export guid="ABCD"
+

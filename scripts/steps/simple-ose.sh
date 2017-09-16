@@ -1,7 +1,6 @@
 source properties.sh
 
 export OSE_VERSION=3.5
-export GUID="ABCD"
 
 yum -y install atomic-openshift-utils
 yum -y install bash-completion
